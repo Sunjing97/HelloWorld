@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: clang++ build active file",
+			"command": "/usr/bin/clang++",
+			"args": [
+				"-fcolor-diagnostics",
+				"-fansi-escape-codes",
+				"-g",
+				// 编译文件
+				"${file}", //当前打开的文件所在文件夹
+				"-o",
+				"${fileDirname}/output/${fileBasenameNoExtension}"
+				//fileDirname 当前文件所在的文件夹目录
+				//fileBasenameNoExtension 当前文件名称不带扩展
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+				//cwd task启动时的工作目录
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: /usr/bin/clang++"
+		}
+	]
+}
